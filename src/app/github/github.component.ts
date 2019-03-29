@@ -1,32 +1,28 @@
+import { UserDetailsService } from './../github-http/user-details.service';
 import { Repo } from './../repo';
 import { User } from './../user';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 
-
 @Component({
   selector: 'app-github',
   templateUrl: './github.component.html',
+  providers: [UserDetailsService],
   styleUrls: ['./github.component.css']
 })
 export class GithubComponent implements OnInit {
 
   user:User;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private userService:UserDetailsService) { }
 
   ngOnInit() {
-
-    interface ApiResponse{
-      
-      login:string;
+    
+    this.userService.userDetails()
+    this.user=this.userService.user
      
     }
-
-    this.http.get<ApiResponse>('https://api.github.com/users/lizkimita?access_token= +125bd1682550988de7f398d8050bad5786a31059').subscribe(data=>{
-    this.user = new User(data.login)
-    })
   }
 
-}
+
