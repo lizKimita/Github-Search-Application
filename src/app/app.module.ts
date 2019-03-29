@@ -4,11 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GithubComponent } from './github/github.component';
+import { UserComponent } from './user/user.component';
+import { RepositoryComponent } from './repository/repository.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GithubComponent
+    GithubComponent,
+    UserComponent,
+    RepositoryComponent
   ],
   imports: [
     BrowserModule,
