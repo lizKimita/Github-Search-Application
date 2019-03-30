@@ -1,10 +1,11 @@
 <nav class="nav">
-  <div class="navbar">
-     <p>User Profile</p>
+
+  <div class="navbar"> 
+     <a routerLink='/user' routerLinkActive='active'>Search</a>
   </div>
-  <div class="navbar">
-     <p>Search Repositories</p>
-  </div>
+  <div class="navbar">     
+      <a routerLink='/github' routerLinkActive='active'>User Profile</a>
+   </div>
 </nav>
-<app-github></app-github>
+<router-outlet></router-outlet>
 
