@@ -11,34 +11,33 @@
             </div>
             <br>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-4">
                   <ul class = "list-group-item">
+                      <p>               
+                          <span class = "label label-success">Followers: {{user.followers}} </span>
+                          <span class = "label label-warning">Following: {{user.following}} </span>
+                          <span class = "label label-danger">Repositories: {{user.public_repos}} </span>  
+                      </p>     
                     <li>User Name: {{ user.login}}</li>
                     <li *ngIf = "user.bio">{{user.bio}}</li>
                     <li *ngIf = "user.email">Email: {{user.email}}</li>                   
                     <li *ngIf = "user.location"> Location:{{user.location}}</li>
                     <p> <a href="{{user.html_url}}" target="_blank" class =" btn btn-info btn-sm">User Profile on Github</a> </p>
-                                      
+                                
                   </ul>
               </div>
               <div class="col-md-6">
-                <p>               
-                    <span class = "label label-success">Followers: {{user.followers}}</span>
-                    <span class = "label label-warning">Following: {{user.following}}</span>
-                    <span class = "label label-danger">Repositories: {{user.public_repos}}</span>  
-                </p>                                     
+                <!---<div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h2 class="panel-title" style="text-align:center">Repositories</h2>
+                  </div class="panel-body" *ngFor="let repo of repos">
+                  <p>
+
+                  </p>
+                </div>-->
+    
               </div>
           </div>
         </div>
       </div>
 </div>
-
-<!---<div *ngIf = "user">
-  <div class="panel panel-default">
-    <div class ="panel-heading">
-      {{user.login}}
-      {{user.avatar_url}}
-    </div>
-  </div>
-</div>
---->
