@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +26,9 @@ import { UserDetailsService } from './github-http/user-details.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgProgressModule,
+    NgProgressHttpModule
   ],
   providers: [UserDetailsService, RepoDetailsService],
   bootstrap: [AppComponent]
