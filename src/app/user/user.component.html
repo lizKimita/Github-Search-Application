@@ -1,9 +1,8 @@
 <div class= "container-fluid">
-  <div class="row">
-    <form (ngSubmit)='submitUser()' #user = 'ngForm'>
+  
+    <form>
       <div class="form-group">
-        <label for="login">Github User Name</label>
-        <input type="text" class ="form-control" id="login" [(ngModel)] = "newUser.login" name="login"Required>
+        <input type="text" class = "form-control" placeholder="Enter GitHub UserName Here"[(ngModel)] = "login" name="login" (keyup)="newUser()">
         <!--<div [hidden]= "login.valid || login.pristine" class = "alert alert-danger">
           <p>Github User Name is Required</p>
         </div>-->
@@ -11,5 +10,5 @@
       </div>
       <button type="submit" class= "btn btn-info bt-lg">Search User</button>
     </form>
-  </div>
+  
 </div>

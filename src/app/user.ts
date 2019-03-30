@@ -8,6 +8,7 @@ export class User {
     following: any;
     followers: any;
     html_url: any;
+    repos: any;
     constructor(public login:string ) {
     }
 }

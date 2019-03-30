@@ -1,8 +1,9 @@
+
 import { environment } from './../../environments/environment';
 import { Repo } from './../repo';
 import { User } from './../user';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 
 @Injectable()
@@ -10,9 +11,11 @@ export class UserDetailsService {
 
   user:User;
   newUser: string;
+  repos:Repo;
 
   constructor(private http:HttpClient) {
     this.user= new User("");
+    this.repos = new Repo("", "")
    }
 
    userDetails(){
@@ -28,10 +31,11 @@ export class UserDetailsService {
       public_repos:string;
       bio:string;
       location:string;
+      
     }
 
     let promise = new Promise ((resolve, reject)=>{
-      this.http.get<ApiResponse>('https://api.github.com/users/lizkimita?access_token=125bd1682550988de7f398d8050bad5786a31059').toPromise().then(response=>{
+      this.http.get<ApiResponse>(environment.apiUrl + "lizkimita" + environment.accessToken).toPromise().then(response=>{
 
         this.user.login = response.login
         this.user.name = response.name
@@ -54,8 +58,5 @@ export class UserDetailsService {
     })
     return promise
    }
-
-
-   
 
 }

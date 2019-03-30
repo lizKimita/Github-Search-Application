@@ -1,14 +1,17 @@
-import { UserDetailsService } from './github-http/user-details.service';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GithubComponent } from './github/github.component';
 import { UserComponent } from './user/user.component';
 import { RepositoryComponent } from './repository/repository.component';
+import { RepoDetailsService } from './repo-http/repo-details.service';
+import { UserDetailsService } from './github-http/user-details.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,7 @@ import { RepositoryComponent } from './repository/repository.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserDetailsService],
+  providers: [UserDetailsService, RepoDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
