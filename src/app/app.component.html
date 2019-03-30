@@ -1,11 +1,14 @@
-<nav class="nav">
-
+<div class = "container-fluid">
+<nav class="nav navbar-dark" style="background-color: #14212b88;">
   <div class="navbar"> 
-     <a routerLink='/user' routerLinkActive='active'>Search</a>
+     <a class="navbar-brand" routerLink='/user' routerLinkActive='active'>Search</a>
   </div>
   <div class="navbar">     
-      <a routerLink='/github' routerLinkActive='active'>User Profile</a>
+      <a class="navbar-brand" routerLink='/github' routerLinkActive='active'>User Profile</a>
    </div>
 </nav>
-<router-outlet></router-outlet>
 
+<br>
+
+<router-outlet></router-outlet>
+</div>
