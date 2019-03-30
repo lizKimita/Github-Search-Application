@@ -1,3 +1,4 @@
+import { UserDetailsService } from './github-http/user-details.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +23,7 @@ import { RepositoryComponent } from './repository/repository.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

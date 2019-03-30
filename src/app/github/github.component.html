@@ -1,10 +1,44 @@
 <h1>Github Search Repo App</h1>
-
 <div class = "container">
     <app-user></app-user>
-      <div class="container">
-        <blockquote>
-           <p>{{user.login}}</p>
-        </blockquote>
+      <div class="panel panel-default">
+        <div class ="panel-heading">
+           <p style="font-size: 200%">{{user.name}}</p>
+        </div>
+        <div class ="panel-body">
+            <div style = text-align:center>
+              <img src="{{user.avatar_url}}" alt="">
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                  <ul class = "list-group-item">
+                    <li>User Name: {{ user.login}}</li>
+                    <li *ngIf = "user.bio">{{user.bio}}</li>
+                    <li *ngIf = "user.email">Email: {{user.email}}</li>                   
+                    <li *ngIf = "user.location"> Location:{{user.location}}</li>
+                    <p> <a href="{{user.html_url}}" target="_blank" class =" btn btn-info btn-sm">User Profile on Github</a> </p>
+                                      
+                  </ul>
+              </div>
+              <div class="col-md-6">
+                <p>               
+                    <span class = "label label-success">Followers: {{user.followers}}</span>
+                    <span class = "label label-warning">Following: {{user.following}}</span>
+                    <span class = "label label-danger">Repositories: {{user.public_repos}}</span>  
+                </p>                                     
+              </div>
+          </div>
+        </div>
       </div>
 </div>
+
+<!---<div *ngIf = "user">
+  <div class="panel panel-default">
+    <div class ="panel-heading">
+      {{user.login}}
+      {{user.avatar_url}}
+    </div>
+  </div>
+</div>
+--->

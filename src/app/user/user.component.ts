@@ -1,5 +1,5 @@
 import { User } from './../user';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
   newUser = new User("");
+  @Output() addUser = new EventEmitter<User>()
   
-  constructor() { }
+  submitUser() {
+    this.addUser.emit(this.newUser);
+   }
 
   ngOnInit() {
   }

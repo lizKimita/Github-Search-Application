@@ -1,11 +1,15 @@
 <div class= "container-fluid">
   <div class="row">
-    <form #user = 'ngForm'>
+    <form (ngSubmit)='submitUser()' #user = 'ngForm'>
       <div class="form-group">
         <label for="login">Github User Name</label>
-        <input type="text" class ="form-control" id="login" [(ngModel)] = "newUser.login" name="login">
-        display{{newUser.login}}
+        <input type="text" class ="form-control" id="login" [(ngModel)] = "newUser.login" name="login"Required>
+        <!--<div [hidden]= "login.valid || login.pristine" class = "alert alert-danger">
+          <p>Github User Name is Required</p>
+        </div>-->
+
       </div>
+      <button type="submit" class= "btn btn-info bt-lg">Search User</button>
     </form>
   </div>
 </div>
