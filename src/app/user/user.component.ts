@@ -1,5 +1,8 @@
+import { GithubComponent } from './../github/github.component';
+import { UserDetailsService } from './../github-http/user-details.service';
 import { User } from './../user';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-user',
