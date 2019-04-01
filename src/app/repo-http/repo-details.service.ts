@@ -12,6 +12,7 @@ export class RepoDetailsService {
 
   constructor(private http:HttpClient) {
     this.repos = new Repo("","");
+    
    }
 
    repoDetails(){

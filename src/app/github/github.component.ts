@@ -17,22 +17,20 @@ export class GithubComponent implements OnInit {
 
   user:User;
   repos:Repo;
-  newUser: string;
-  
+  newUser:"";
+  changeUser = "";
+
 
   constructor(private http:HttpClient, private userService:UserDetailsService,private repoService:RepoDetailsService) { 
      
   }
-  onSubmitNewUser(newUser:string){
-    return this.newUser
-  }
 
   ngOnInit() {
-    this.userService.userDetails()
+    this.userService.userDetails(this.newUser)
     this.user=this.userService.user
     
     this.repoService.repoDetails()
-    this.repos=this.repoService.repos
+   this.repos=this.repoService.repos
     }
   }
 

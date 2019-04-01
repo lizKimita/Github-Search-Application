@@ -1,15 +1,53 @@
+<ng-progress></ng-progress>
 <div class= "container-fluid">
   <div class = "jumbotron">
     <h1 style="text-align:center" class = "githeader"> <strong>Github Search Repo</strong> </h1> 
-    <form (ngSubmit) = 'submitUser()' #user ='ngForm'>
+    <form (ngSubmit) = "submitUser()" #searchform = 'ngForm'>
       <div class="form-group">
-        <input type="text" placeholder="Enter GitHub UserName Here" class="form-control" [(ngModel)] = "newUser.login" name="login"Required>
-        <!--<div [hidden]= "login.valid || login.pristine" class = "alert alert-danger">
-          <p>Github User Name is Required</p>
-        </div>-->
-
+        <input type="text" placeholder="Enter GitHub UserName Here" class="form-control" [(ngModel)] = "newUser" name="newUser">
       </div>
       <button type="submit" class= "btn btn-info bt-lg">Search User</button>
     </form>
   </div>
+  <h1 style="text-align:center" class="header"> <strong>User Profile</strong> </h1>
+<div class = "container">
+      <div class="card-styles">
+        <div class ="panel-heading">
+           <p style="font-size: 200%" class = "idname">{{user.name}}</p>
+        </div>
+        <br>
+        <div class ="card">
+            <div style = "text-align:center" class =" imgpadding" >
+              <img src="{{user.avatar_url}}" class = "col-sm-3" alt="">
+            </div>
+            <br>
+        
+            <div class="row">
+              <div class="col-md-5" >
+                  <div class = "list-details">
+                      <p>               
+                          <span class = "label label-success"> <strong>Followers:</strong>  {{user.followers}} </span>
+                          <span class = "label label-warning"> <strong>Following:</strong>  {{user.following}} </span>
+                          <span class = "label label-danger"> <strong>Repositories: </strong> {{user.public_repos}} </span>  
+                      </p>     
+                    <p>User Name: {{ user.login}}</p>
+                    <p *ngIf = "user.bio">{{user.bio}}</p> 
+                    <p *ngIf = "user.email">Email: {{user.email}}</p>                   
+                    <p *ngIf = "user.location"> Location:{{user.location}}</p>
+                    <br>
+                    <p> <a href="{{user.html_url}}" target="_blank" class =" btn btn-info btn-sm">User Profile on Github</a> </p>
+                                
+                    </div>
+              </div>
+              <div class="col-md-7">                                 
+                    <h2 style="text-align:center"> <strong>Repositories</strong> </h2>
+                    <div *ngFor= "let repo of repos">
+                      <p> {{repos.name}} </p>
+                                         
+              </div>
+                
+            </div>  
+        </div>
+      </div>
+</div>
 </div>
