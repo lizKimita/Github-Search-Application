@@ -2,7 +2,6 @@
 
 # compiled output
 /environment.ts
-/dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run

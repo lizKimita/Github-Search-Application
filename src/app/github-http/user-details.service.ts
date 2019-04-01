@@ -1,5 +1,4 @@
-
-import { environment } from './../../environments/environment';
+import { environment } from './../../environments/environment.prod';
 import { Repo } from './../repo';
 import { User } from './../user';
 import { HttpClient } from '@angular/common/http';
