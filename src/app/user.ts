@@ -1,14 +1,5 @@
 export class User {
-    avatar_url: any;
-    name: string;
-    email: string;
-    public_repos:string;
-    bio:string;
-    location:string;
-    following: any;
-    followers: any;
-    html_url: any;
-    repos: any;
-    constructor(public login:string) {
+    
+    constructor(public login:string,public avatar_url: any,public  name: string,email: string,public public_repos:string,public bio:string,public location:string,public following: any,public followers: any,public html_url: any) {
     }
 }

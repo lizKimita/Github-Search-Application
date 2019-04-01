@@ -27,7 +27,7 @@ export class GithubComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.userDetails(this.newUser)
+    //this.userService.userDetails(this.newUser)
     this.user=this.userService.user
     
     this.repoService.repoDetails()
