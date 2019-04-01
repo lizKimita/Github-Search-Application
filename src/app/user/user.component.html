@@ -38,21 +38,21 @@
                           <span class = "label label-warning"> <strong>Following:</strong>  {{user.following}} </span>
                           <span class = "label label-danger"> <strong>Repositories: </strong> {{user.public_repos}} </span>  
                       </p>     
-                    <p>User Name: {{ user.login}}</p>
+                    <p> <strong>User Name: </strong> {{ user.login}}</p>
                     <p *ngIf = "user.bio">{{user.bio}}</p> 
-                    <p *ngIf = "user.email">Email: {{user.email}}</p>                   
-                    <p *ngIf = "user.location"> Location:{{user.location}}</p>
+                    <p *ngIf = "user.email"> <strong>Email:</strong> {{user.email}}</p>                   
+                    <p *ngIf = "user.location"> <strong>Location:</strong> {{user.location}}</p>
+                    <p *ngIf = "user.created_at"><strong>Created At:</strong> {{user.created_at}}</p>
                     <br>
-                    <p> <a href="{{user.html_url}}" target="_blank" class =" btn btn-info btn-sm">User Profile on Github</a> </p>
                                 
                     </div>
               </div>
               <div class="col-md-7">                                 
                     <h2 style="text-align:center"> <strong>Repositories</strong> </h2>
                     <div *ngFor= "let repo of repos">
-                      <p> {{repo.name}} </p>
-                      <p>{{repo.description}}</p>
-                                         
+                      <div> <strong> {{repo.name}} </strong> </div>
+                       <div>{{repo.description}}</div>
+                       <p><a href="{{repo.html_url}}" target = "_blank" class="btn btn-success btn-sm"> Repo Details on Github</a></p>                                     
               </div>
                 
             </div>  

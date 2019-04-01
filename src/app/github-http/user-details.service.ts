@@ -16,7 +16,7 @@ export class UserDetailsService {
   public username:string;
 
   constructor(private http:HttpClient) {
-      this.user= new User("","","","","","","","","","");  
+      this.user= new User("","","","","","","","","","","");  
       this.repos=[];
       this.username = "lizKimita";
      }
@@ -46,6 +46,11 @@ export class UserDetailsService {
           this.user.following=response.following
           this.user.html_url=response.html_url
           this.user.bio=response.bio
+          this.user.email= response.email
+          this.user.location = response.location
+          this.user.created_at = response.created_at
+          this.user.name = response.name
+
           console.log(this.user);
           resolve()
          },error=>{
@@ -63,6 +68,7 @@ export class UserDetailsService {
       interface ApiResponse{
         name:string;
         description:string;
+        html_url:string;
         
    
     }
@@ -71,7 +77,7 @@ export class UserDetailsService {
       this.http.get<ApiResponse[]>(environment.apiUrl+this.username + environment.repos +environment.accessToken).toPromise().then(response=>{
  
         response.forEach(repo => {
-          this.repos.push(new Repo(repo.name,repo.description))
+          this.repos.push(new Repo(repo.name,repo.description,repo.html_url))
         });
  
         console.log(response);
