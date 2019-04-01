@@ -1,5 +1,16 @@
 <ng-progress></ng-progress>
+
 <div class= "container-fluid">
+
+    <nav class="nav navbar-dark" style="background-color: #14212b88;">
+        <!--<div class="navbar"> 
+           <a class="navbar-brand" routerLink='/user' routerLinkActive='active'>Search</a>
+        </div>-->
+        <div class="navbar">     
+            <a href="{{user.html_url}}" target="_blank" class =" btn btn-info btn-sm">User Profile on Github</a>
+         </div>     
+      </nav>
+      <br>
   <div class = "jumbotron">
     <h1 style="text-align:center" class = "githeader"> <strong>Github Search Repo</strong> </h1> 
     <form (ngSubmit) = "submitUser()" #searchform = 'ngForm'>

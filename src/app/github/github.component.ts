@@ -15,10 +15,11 @@ import { RepoDetailsService } from '../repo-http/repo-details.service';
 })
 export class GithubComponent implements OnInit {
 
+   
   user:User;
-  repos:Repo;
-  newUser:"";
+  public newUser:string;
   changeUser = "";
+  users =[];
 
 
   constructor(private http:HttpClient, private userService:UserDetailsService,private repoService:RepoDetailsService) { 
@@ -30,7 +31,7 @@ export class GithubComponent implements OnInit {
     this.user=this.userService.user
     
     this.repoService.repoDetails()
-   this.repos=this.repoService.repos
+   
     }
   }
 
