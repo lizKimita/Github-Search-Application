@@ -4,13 +4,12 @@ import { Repo } from './../repo';
 import { User } from './../user';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { RepoDetailsService } from '../repo-http/repo-details.service';
 
 
 @Component({
   selector: 'app-github',
   templateUrl: './github.component.html',
-  providers: [UserDetailsService, RepoDetailsService],
+  providers: [UserDetailsService],
   styleUrls: ['./github.component.css']
 })
 export class GithubComponent implements OnInit {
@@ -22,15 +21,14 @@ export class GithubComponent implements OnInit {
   users =[];
 
 
-  constructor(private http:HttpClient, private userService:UserDetailsService,private repoService:RepoDetailsService) { 
+  constructor(private http:HttpClient, private userService:UserDetailsService) { 
      
   }
 
   ngOnInit() {
-    //this.userService.userDetails(this.newUser)
+  
     this.user=this.userService.user
-    
-    this.repoService.repoDetails()
+  
    
     }
   }

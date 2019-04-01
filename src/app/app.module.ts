@@ -14,7 +14,6 @@ import { AppComponent } from './app.component';
 import { GithubComponent } from './github/github.component';
 import { UserComponent } from './user/user.component';
 import { RepositoryComponent } from './repository/repository.component';
-import { RepoDetailsService } from './repo-http/repo-details.service';
 import { UserDetailsService } from './github-http/user-details.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -37,7 +36,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NgProgressHttpModule,
     RoutingModule
   ],
-  providers: [UserDetailsService, RepoDetailsService],
+  providers: [UserDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
