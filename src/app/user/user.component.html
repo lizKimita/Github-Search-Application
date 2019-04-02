@@ -31,7 +31,7 @@
             <br>
         
             <div class="row">
-              <div class="col-md-5" >
+              <div class="col-md-4" >
                   <div class = "list-details">
                       <p>               
                           <span class = "label label-success"> <strong>Followers:</strong>  {{user.followers}} </span>
@@ -47,12 +47,16 @@
                                 
                     </div>
               </div>
-              <div class="col-md-7">                                 
+              <div class="col-md-8">
+                                             
                     <h2 style="text-align:center"> <strong>Repositories</strong> </h2>
-                    <div *ngFor= "let repo of repos">
-                      <div> <strong> {{repo.name}} </strong> </div>
-                       <div>{{repo.description}}</div>
+                    <br>
+                    <div class = "row">  
+                    <div id = "cardrepos" *ngFor= "let repo of repos" class = "card col-md-5 border-secondary" style = "width:50%">
+                      <div class = "card-body" class ="card-title"> <strong> {{repo.name}} </strong> </div>
+                       <div class = "card-body">{{repo.description}}</div>
                        <p><a href="{{repo.html_url}}" target = "_blank" class="btn btn-success btn-sm"> Repo Details on Github</a></p>                                     
+                </div>
               </div>
                 
             </div>  

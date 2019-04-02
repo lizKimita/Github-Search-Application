@@ -16,11 +16,13 @@ export class UserComponent implements OnInit {
   user:User;
   repos:Repo[];
   public username:string;
+  
 
   submitUser(){
     this.userService.update(this.username);
     this.userService.getUserInfo();
     this.userService.getRepos();
+    
   }
 
   constructor(private userService:UserDetailsService) { 
@@ -32,6 +34,7 @@ export class UserComponent implements OnInit {
     this.user=this.userService.user;
     this.userService.getRepos();
     this.repos=this.userService.repos;
+    
     
   }
 

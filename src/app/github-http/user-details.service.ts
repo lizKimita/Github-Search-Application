@@ -63,22 +63,18 @@ export class UserDetailsService {
      }
 
      getRepos(){
-
       interface ApiResponse{
         name:string;
         description:string;
-        html_url:string;
-        
+        html_url:string;        
    
     }
    
     let promise = new Promise((resolve,reject)=>{
       this.http.get<ApiResponse[]>(environment.apiUrl+this.username + environment.repos +environment.accessToken).toPromise().then(response=>{
- 
         response.forEach(repo => {
           this.repos.push(new Repo(repo.name,repo.description,repo.html_url))
         });
- 
         console.log(response);
         resolve()
        },error=>{
